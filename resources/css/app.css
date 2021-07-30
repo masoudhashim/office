@@ -1,0 +1,17 @@
+@import "~bootstrap/dist/css/bootstrap";
+
+body {
+
+ background: #f7f8f9;
+ color: #3A3C42;
+}
+
+.navbar{
+    background-color: #1E2632;
+}
+
+.card{
+
+    box-shadow: 0 2px 4px rgba(204, 204, 204, .0.3);
+    padding: 40px;
+}
