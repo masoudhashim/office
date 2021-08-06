@@ -55,4 +55,18 @@ class User extends Authenticatable
 
         return $this->hasOne('App\Models\Client');
     }
+
+    public function hasAnyRole(string $role)
+    {
+
+        return  null !== $this->roles()->where('name',$role)->first();
+    }
+
+    public function hasAnyRoles(array $role)
+    {
+
+        return  null !== $this->roles()->whereIn('name',$role)->first();
+    }
+
+
 }

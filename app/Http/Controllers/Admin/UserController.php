@@ -22,7 +22,11 @@ class UserController extends Controller
         if(Gate::denies('loged-in')){
             dd('no access allowed');
         };
-        return view('admin.users.index', ['users'=> User::paginate(1)]);
+
+        if(Gate::allows('is-admin')){
+            return view('admin.users.index', ['users'=> User::paginate(1)]);
+        };
+        dd('no access allowed');
     }
 
     /**
